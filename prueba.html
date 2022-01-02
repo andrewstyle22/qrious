@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+  <body>
+    <input id="urlInput" type="url" value="https://www.youtube.com/"> 
+    <button onclick="createQr()"> Creaate Qr</button>
+    <br/><br/>
+    <canvas id="qr"></canvas>
+     <br/><br/>
+     <p id="dataUrl"><span>hola</span></p>
+     <p id="dataUrl2"><span>hola</span></p>
+     <p id="dataUrl3"><span>hola</span></p>
+    <script>
+      function createQr() {
+        var qr = new QRious({
+          element: document.getElementById('qr'),
+          value: document.getElementById('urlInput').value,
+          background: 'green',
+          foreground: 'yellow',
+          level: 'L'
+        });
+        console.log('qr: ', qr);
+        console.log('qr: ', qr.toDataURL());
+        console.log('qr: ', qr.toDataURL('image/jpeg'));
+        document.getElementById('dataUrl').textContent = qr.toDataURL();
+        document.getElementById('dataUrl2').innerText  = qr.toDataURL();
+        document.getElementById('dataUrl3').innerText  = qr.toDataURL();
+      }
+      /*
+      (function() {
+        var qr = new QRious({
+          element: document.getElementById('qr'),
+          value: 'https://www.linkedin.com/in/joseandresduqueandrade/'
+        });
+      })();
+      */
+    </script> 
+  </body>
+</html>
