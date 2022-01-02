@@ -8,9 +8,9 @@
     <br/><br/>
     <canvas id="qr"></canvas>
      <br/><br/>
-     <p id="dataUrl"><span>hola</span></p>
-     <p id="dataUrl2"><span>hola</span></p>
-     <p id="dataUrl3"><span>hola</span></p>
+     <p id="dataUrl"></p>
+     <p id="dataUrl2"></p>
+     <p id="dataUrl3"></p>
     <script>
       function createQr() {
         var qr = new QRious({
@@ -25,7 +25,8 @@
         console.log('qr: ', qr.toDataURL('image/jpeg'));
         document.getElementById('dataUrl').textContent = qr.toDataURL();
         document.getElementById('dataUrl2').innerText  = qr.toDataURL();
-        document.getElementById('dataUrl3').innerText  = qr.toDataURL();
+        document.getElementById('dataUrl3').innerHTML  = qr.toDataURL();
+        //https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_node_textcontent_innerhtml_innertext
       }
       /*
       (function() {
